@@ -2,7 +2,10 @@
     "name": "EJERCICIO14",
     "description": "A Node-RED Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-ftp": "0.0.6",
+        "node-red-dashboard": "2.23.4"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",

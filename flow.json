@@ -1,1 +1,373 @@
-[]
+[
+    {
+        "id": "c3b6f276.12d87",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "46558d2d.f962d4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "enriquecrespo.com",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "usetls": true,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e4121184.3b3e5",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "55877e24.4e941",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "e4121184.3b3e5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "224817de.bb5e38",
+        "type": "ftp",
+        "host": "enriquecrespo.com",
+        "port": "7021",
+        "secureOptions": "",
+        "user": "cursocefire",
+        "connTimeout": "",
+        "pasvTimeout": "",
+        "keepalive": ""
+    },
+    {
+        "id": "90f64a87.ae8238",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "42bcac1c.2d8dd4",
+        "type": "ui_group",
+        "name": "Datos",
+        "tab": "e4121184.3b3e5",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "80fcbe05.fcc56",
+        "type": "mqtt in",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "topic": "cursocefire/wibeee/irms1",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "46558d2d.f962d4",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "505f8ee1.f14c1"
+            ]
+        ]
+    },
+    {
+        "id": "13f7360c.6d378a",
+        "type": "file",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "filename": "/data/datos/irms.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "3a6fbcf6.8b4314"
+            ]
+        ]
+    },
+    {
+        "id": "505f8ee1.f14c1",
+        "type": "change",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$millis() & ',' & payload\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "13f7360c.6d378a"
+            ]
+        ]
+    },
+    {
+        "id": "f0dbb285.14aa5",
+        "type": "ui_button",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "group": "55877e24.4e941",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 300,
+        "wires": [
+            [
+                "31fa2376.5a0bbc",
+                "a0948a8f.eda8a8"
+            ]
+        ]
+    },
+    {
+        "id": "31fa2376.5a0bbc",
+        "type": "ftp in",
+        "z": "c3b6f276.12d87",
+        "ftp": "224817de.bb5e38",
+        "operation": "put",
+        "filename": "irms.csv",
+        "localFilename": "/data/datos/irms.csv",
+        "name": "",
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "df074afe.9e09d8",
+                "1f28215c.66f41f",
+                "130ef889.ca8397"
+            ]
+        ]
+    },
+    {
+        "id": "3a6fbcf6.8b4314",
+        "type": "debug",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "df074afe.9e09d8",
+        "type": "debug",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1f28215c.66f41f",
+        "type": "ui_text",
+        "z": "c3b6f276.12d87",
+        "group": "55877e24.4e941",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Envio por FTP",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6597b095.98f2f",
+        "type": "ui_text",
+        "z": "c3b6f276.12d87",
+        "group": "42bcac1c.2d8dd4",
+        "order": 1,
+        "width": 6,
+        "height": 8,
+        "name": "",
+        "label": "Datos Enviados",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a0948a8f.eda8a8",
+        "type": "file in",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "filename": "/data/datos/irms.csv",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 400,
+        "y": 260,
+        "wires": [
+            [
+                "6597b095.98f2f"
+            ]
+        ]
+    },
+    {
+        "id": "130ef889.ca8397",
+        "type": "file",
+        "z": "c3b6f276.12d87",
+        "name": "",
+        "filename": "/data/datos/irms.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "encoding": "none",
+        "x": 580,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    }
+]
